@@ -13,9 +13,13 @@ class Database {
             echo "Connection failed: " . $e->getMessage();
         }
     }
+    public function insertUser($a, $b) {
+        $sql = "INSERT INTO user VALUES (null, :username, :password)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['username' => $a, 'password' => $b]);
+    }
 }
 
-//naast new moet je de naam van de class zetten 
-$database = new Database();
+
 
 ?>
