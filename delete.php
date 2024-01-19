@@ -6,7 +6,7 @@ $connetie = new Database();
 try {
     if (isset($_GET['id'])) {
         $connetie->deleteUser($_GET['id']);
-        header("Location: edit_delete.php?Success");
+        header("Location: home.php?Success");
     } else {
         echo "Error: ID parameter is not set.";
     }
